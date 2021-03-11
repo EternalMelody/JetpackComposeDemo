@@ -1,9 +1,11 @@
-package edu.itu.marioandhika.csc515project
+package edu.itu.marioandhika.csc515project.viewModels
 
 import androidx.lifecycle.*
+import edu.itu.marioandhika.csc515project.models.Entry
+import edu.itu.marioandhika.csc515project.models.MyRepository
 
-class MainActivityViewModel(private val repository: MyRepository): ViewModel() {
-    val games: LiveData<List<Game>> = repository.allGames
+class MainActivityViewModel (private val repository: MyRepository): ViewModel() {
+    val games: LiveData<List<Entry>> = repository.allEntries
 }
 
 class MainActivityViewModelFactory(private val repository: MyRepository) : ViewModelProvider.Factory {
